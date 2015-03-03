@@ -42,8 +42,7 @@ class JSONField(models.TextField):
             pass
 
         return value
-
-    def get_db_prep_save(self, value):
+def get_db_prep_save(self, value, connection):
         """Convert our JSON object to a string before we save"""
 
         if value == "" or value == None:
